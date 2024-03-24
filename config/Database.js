@@ -1,6 +1,6 @@
-import { Sequelize } from ("sequelize");
+const { Sequelize } = require("sequelize");
 
-const db = new Sequelize("scho9855_crud_db", "scho9855_admin", "&uMxT3(lM-dI", {
+const db = new Sequelize("crud_db", "root", "", {
   host: "127.0.0.1",
   dialect: "mysql",
 });

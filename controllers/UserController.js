@@ -1,6 +1,6 @@
-import User from "../models/UserModel.js";
+const User = require("../models/UserModel.js");
 
-export const getUsers = async (req, res) => {
+const getUsers = async (req, res) => {
   try {
     const response = await User.findAll();
     res.status(200).json(response);
@@ -9,7 +9,7 @@ export const getUsers = async (req, res) => {
   }
 };
 
-export const getUserById = async (req, res) => {
+const getUserById = async (req, res) => {
   try {
     const response = await User.findOne({
       where: {
@@ -22,7 +22,7 @@ export const getUserById = async (req, res) => {
   }
 };
 
-export const createUser = async (req, res) => {
+const createUser = async (req, res) => {
   try {
     await User.create(req.body);
     res.status(201).json({ msg: "User Created" });
@@ -31,7 +31,7 @@ export const createUser = async (req, res) => {
   }
 };
 
-export const updateUser = async (req, res) => {
+const updateUser = async (req, res) => {
   try {
     await User.update(req.body, {
       where: {
@@ -44,7 +44,7 @@ export const updateUser = async (req, res) => {
   }
 };
 
-export const deleteUser = async (req, res) => {
+const deleteUser = async (req, res) => {
   try {
     await User.destroy({
       where: {
@@ -56,3 +56,5 @@ export const deleteUser = async (req, res) => {
     console.log(error.message);
   }
 };
+
+module.exports = { getUsers, getUserById, createUser, updateUser, deleteUser };
