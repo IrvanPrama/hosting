@@ -1,4 +1,4 @@
-import User from "../models/UserModel.js";
+const User = require("../models/UserModel.js");
 
 export const getUsers = async (req, res) => {
   try {
@@ -56,3 +56,5 @@ export const deleteUser = async (req, res) => {
     console.log(error.message);
   }
 };
+
+export default UserController;
