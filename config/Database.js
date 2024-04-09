@@ -1,8 +1,14 @@
 const { Sequelize } = require("sequelize");
 
-const db = new Sequelize("crud_db", "root", "", {
-  host: "127.0.0.1",
-  dialect: "mysql",
-});
+//masukan semua identitas database ke wadah yang bernama db
+const db = new Sequelize(
+  " bima1537_db_test",
+  "bima1537_admintest",
+  ",B3%$ggy{fj6",
+  {
+    host: "localhost",
+    dialect: "mysql",
+  }
+);
 
 module.exports = db;
